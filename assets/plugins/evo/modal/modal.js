@@ -6,7 +6,7 @@ ET_modal = {
     defaults:
     {	tray:true,
         width: 700,
-        height: 600,
+        height: 500,
         top: 60,
         left: 240,
         overlay: 0,
