@@ -24,19 +24,19 @@ switch($e->name){
         <div class="ethelp" style="display:none">
             <div style="padding:5px" class="inlinecontent">
                 <b>CTR + ALT + C</b>
-                <p>Сздание нового чанка</p>
+                <p>Создание нового чанка</p>
                 <hr/>
                 <b>CTR + ALT + T</b>
-                <p>Сздание нового шаблона</p>
+                <p>Создание нового шаблона</p>
                 <hr/>
                 <b>CTR + ALT + V</b>
-                <p>Сздание нового TV</p>
+                <p>Создание нового TV</p>
                 <hr/>
                 <b>CTR + ALT + s</b>
-                <p>Сздание нового сниппета</p>
+                <p>Создание нового сниппета</p>
                 <hr/>
                 <b>CTR + ALT + p</b>
-                <p>Сздание нового плагина</p>
+                <p>Создание нового плагина</p>
                 <hr/>
 				<b>CTR + ALT + f</b>
                 <p>Управление файлами</p>
