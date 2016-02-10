@@ -1,5 +1,6 @@
 <?php 
-require_once dirname(__FILE__).'/../../../../manager/includes/config.inc.php'; 
+include_once(dirname(__FILE__)."/../../cache/siteManager.php");
+require_once(dirname(__FILE__).'/../../../'.MGR_DIR.'/includes/protect.inc.php');
 startCMSSession(); 
 include_once(MODX_MANAGER_PATH.'/includes/document.parser.class.inc.php'); 
 $modx = new DocumentParser; 
@@ -10,7 +11,8 @@ $mod_table = $dbprefix.'excurs';
 $theme = $modx->config['manager_theme']; 
 $basePath = $modx->config['base_path']; 
 
-define('ROOT', $modx->config['base_path']);
+if(!defined('MODX_BASE_PATH')){die('What are you doing? Get out of here!');}
+
 	 
 
 	$txt = $_POST[txt];
