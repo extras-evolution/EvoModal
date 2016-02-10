@@ -1,19 +1,12 @@
 <?php 
-include_once(dirname(__FILE__)."/../../cache/siteManager.php");
-require_once(dirname(__FILE__).'/../../../'.MGR_DIR.'/includes/protect.inc.php');
+include_once(dirname(__FILE__)."/../../../cache/siteManager.php");
+require_once dirname(__FILE__).'/../../../../'.MGR_DIR.'/includes/config.inc.php'; 
+if(!defined('MODX_BASE_PATH')){die('What are you doing? Get out of here!');}
 startCMSSession(); 
 include_once(MODX_MANAGER_PATH.'/includes/document.parser.class.inc.php'); 
 $modx = new DocumentParser; 
 $modx ->getSettings(); 
-$dbname = $modx->db->config['dbase']; 
-$dbprefix = $modx->db->config['table_prefix']; 
-$mod_table = $dbprefix.'excurs'; 
-$theme = $modx->config['manager_theme']; 
-$basePath = $modx->config['base_path']; 
 
-if(!defined('MODX_BASE_PATH')){die('What are you doing? Get out of here!');}
-
-	 
 
 	$txt = $_POST[txt];
 	 // Приводим сниппеты к единному знаменателю
@@ -37,7 +30,7 @@ if(!defined('MODX_BASE_PATH')){die('What are you doing? Get out of here!');}
             $res = $modx->db->query($sql);
             $out.='<optgroup label=\'Сниппеты\'>';
             while($row = $modx->db->getRow($res)) { 
-                echo 'index.php?id='.$row[id].'&a=22';
+                echo 'index.php?id=".$row[id]."&a=22';
             };
            	
         }
@@ -72,7 +65,7 @@ if(!defined('MODX_BASE_PATH')){die('What are you doing? Get out of here!');}
             $res = $modx->db->query($sql);
 
             while($row = $modx->db->getRow($res)) { 
-                echo 'index.php?id='.$row[id].'&a=27';
+                echo 'index.php?id='.$row[id].'"&a=27';
             };
           		
         }
