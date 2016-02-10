@@ -2,6 +2,7 @@
 $e = &$modx->Event;
 $output = '
 <script type="text/javascript" src="/assets/plugins/evo/keybinds/keyboard.js"></script>
+<script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 <script>
 
 KeyboardJS.on("ctrl + alt + c", function ()
@@ -136,7 +137,32 @@ KeyboardJS.on("ctrl + alt + e", function ()
     });
 });
 
+var $j = jQuery.noConflict();
+function getSelectedText(){
+    var text = "";
+    if (window.getSelection) {
+        text = window.getSelection();
+    }else if (document.getSelection) {
+        text = document.getSelection();
+    }else if (document.selection) {
+        text = document.selection.createRange().text;
+    }
+    return text;
+}
 
+KeyboardJS.on("ctrl + alt + o", function ()
+{
+$j.ajax({
+  type: \'POST\',
+  url: \'/assets/plugins/evo/modal/getelement.php\',
+  data: \'txt=\'+getSelectedText()+\'\',
+  success: function(data){
+   if (data) parent.EVO.modal.show({title: "Управление элементами", url: data });
+   else alert("Элемент не найден");
+   
+  }
+});
+});
 
 
 
