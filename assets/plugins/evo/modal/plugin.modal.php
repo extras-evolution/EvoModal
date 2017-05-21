@@ -59,7 +59,7 @@ switch($e->name){
 
 
     case 'OnManagerTreePrerender':
-        $output = '<a style="position: absolute;top: 8.5px;left: 251.5px; color: #3d5764 !important; font-size:10.5px" href="" onclick="top.EVO.modal.show({title:\'Елементы\',id:\'treebutton\',url:\'index.php?a=76\'});return false;">
+        $output = '<a style="position: absolute;top: 7px;left: 258.5px; color: #3d5764 !important; font-size:10.5px" href="" onclick="top.EVO.modal.show({title:\'Елементы\',id:\'treebutton\',url:\'index.php?a=76\'});return false;">
 		  <i class="fa fa-th fa-lg"></i></a>';
         $e->output($output);
         break;
